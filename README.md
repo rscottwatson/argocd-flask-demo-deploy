@@ -5,8 +5,7 @@ Created a write enable ssh key to add to this repo to allow argocd image updater
 ssh-keygen -t rsa -b 4096 -f argocd-flask-demo-keys
 
 kubectl create secret generic git-creds \
-   --from-file=ssh-privatekey=./argocd-flask-demo-keys \
-   --from-file=ssh-publickey=./argocd-flask-demo-keys.pub \
+   --from-file=sshPrivateKey=../argocd-flask-demo-keys \
    --dry-run=client -o yaml \
 | kubeseal --format yaml  \
-| tee ./argocd-flask-demo-deploy/base/deploy-github-cred.yaml
+| tee ./base/deploy-github-cred.yaml
