@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - scottwatson/argocd-flask-demo-repo:0.0.2
