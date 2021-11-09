@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-flask-demo
+spec:
+  selector:
+    matchLabels:
+      app: argocd-flask-demo
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: argocd-flask-demo
+    spec:
+      containers:
+      - name: flask-demo
+        image: scottwatson/argocd-flask-demo-repo:0.0.1
+        ports:
+        - containerPort: 8765

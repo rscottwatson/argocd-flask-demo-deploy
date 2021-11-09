@@ -1,0 +1,24 @@
+apiVersion: extensions/v1
+kind: Ingress
+metadata:
+  name: argocd-flask-demo
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ingress.kubernetes.io/app-root: "/"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  tls:
+  - hosts:
+    - flask.192.222.186.105.nip.io
+    secretName: argocd-flask-demo
+  rules:
+  - host: flask.192.222.186.105.nip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: flask-demo-deployment
+            port: 8765
+

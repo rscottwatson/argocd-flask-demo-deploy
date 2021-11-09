@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: argocd-flask-demo
+spec:
+  ports:
+  - port: 8765
+    protocol: TCP
+    targetPort: 8765
+  selector:
+    app: argocd-flask-demo
+status:
+  loadBalancer: {}
