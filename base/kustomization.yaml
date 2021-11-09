@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - deploy-deployment.yaml
   - deploy-service.yaml
+  - deploy-github-cred.yaml
