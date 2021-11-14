@@ -16,4 +16,4 @@ spec:
       - name: flask-demo
         image: scottwatson/argocd-flask-demo-repo:0.0.1
         ports:
-        - containerPort: 8765
+        - containerPort: 8000
