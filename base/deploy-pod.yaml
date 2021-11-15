@@ -11,7 +11,7 @@ spec:
     name: argocd-flask-demo
     resources: {}
     ports:
-    - containerPort: 8765
+    - containerPort: 8000
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
