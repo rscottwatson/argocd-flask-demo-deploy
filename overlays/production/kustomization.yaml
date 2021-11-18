@@ -4,7 +4,7 @@ kind: Kustomization
 
 commonLabels:
   release: production
-  contact: 'scott watson'
+  contact: scott_watson
 
 resources:
 #  - ingress.yaml
