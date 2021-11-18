@@ -1,7 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+
+commonLabels:
+  release: production
+  contact: "scott watson"
+
 resources:
 #  - ingress.yaml
   - ../../base
   
+replicas:
+  - name: argocd-flask-demo
+    count: 3
+
+images: 
+  - name: scottwatson/argocd-flask-demo-repo
+    newTag: "0.0.3"
